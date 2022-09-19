@@ -22,14 +22,12 @@
     "skipLibCheck": true,
     "types": ["vite/client"],
     "removeComments": true,
-    "outDir": "./src/assets",
     "paths": {
       "/@/*": ["src/*"],
       "/#/*": ["types/*"]
     }
   },
   "include": [
-    "src/**/*",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",

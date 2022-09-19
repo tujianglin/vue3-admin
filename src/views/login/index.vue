@@ -3,7 +3,7 @@
   import { Button } from 'ant-design-vue';
   export default defineComponent({
     setup() {
-      return () => <Button type={'primary'}>登录</Button>;
+      return () => <Button type={'primary'}>aha</Button>;
     },
   });
 </script>

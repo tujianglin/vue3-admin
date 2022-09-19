@@ -6,6 +6,7 @@ import { resolve } from 'path';
 import { createVitePlugins } from './build/vite/plugin';
 import { createProxy } from './build/vite/proxy';
 import { wrapperEnv } from './build/utils';
+import { generateModifyVars } from './build/generate/generateModifyVars';
 import pkg from './package.json';
 
 function pathResolve(dir: string) {
@@ -46,11 +47,8 @@ export default defineConfig(({ command, mode }) => {
     css: {
       preprocessorOptions: {
         less: {
-          modifyVars: {},
+          modifyVars: generateModifyVars(),
           javascriptEnabled: true,
-          additionalData: `
-            @import "ant-design-vue/lib/style/themes/default.less";
-            `,
         },
       },
     },

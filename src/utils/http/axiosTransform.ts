@@ -4,7 +4,6 @@ import { isString } from 'lodash-es';
 import { Result, RequestOptions, AxiosTransform } from '/#/axios';
 import { RequestEnum } from '/@/enums/httpEnum';
 // import { joinTimestamp } from './helper';
-import { getToken } from '/@/utils/auth';
 import { checkStatus } from './checkStatus';
 
 export const transform: AxiosTransform = {
@@ -35,11 +34,7 @@ export const transform: AxiosTransform = {
     throw new Error(msg || '请求出错,请稍后重试');
   },
   /** 请求拦截器处理 */
-  requestInterceptors: (config, options) => {
-    const token = getToken();
-    if (token) {
-      (config as Recordable).headers['Blade-Auth'] = `${options.authenticationScheme} ${token}`;
-    }
+  requestInterceptors: (config, _) => {
     return config;
   },
   responseInterceptorsCatch: (_, error: any) => {
