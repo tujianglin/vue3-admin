@@ -1,6 +1,10 @@
+export const prefixCls = 't';
+
+export const primaryColor = '#1890ff';
+
 /* app 主题颜色列表 */
 export const APP_PRESET_COLOR_LIST: string[] = [
-  'red',
+  '#1890ff',
   '#0084f4',
   '#009688',
   '#536dfe',

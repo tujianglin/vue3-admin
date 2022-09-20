@@ -1,17 +1,22 @@
 <script lang="tsx">
   import { defineComponent, ref } from 'vue';
-  import { APP_PRESET_COLOR_LIST } from '/@/settings/designSetting';
+  import { APP_PRESET_COLOR_LIST, primaryColor } from '/@/settings/designSetting';
   import { CheckOutlined } from '@ant-design/icons-vue';
-  import { changeTheme } from '/@/logics/theme';
+  import { ConfigProvider } from 'ant-design-vue';
+  import { useDesign } from '/@/hooks/web/useDesign';
   export default defineComponent({
     setup() {
-      const prefixCls = 't-theme-color-picker';
+      const { prefixCls } = useDesign('theme-color-picker');
 
-      const def = ref('red');
+      const def = ref(primaryColor);
 
       const handleClick = async (color) => {
         def.value = color;
-        changeTheme(color);
+        ConfigProvider.config({
+          theme: {
+            primaryColor: color,
+          },
+        });
       };
 
       return () => (
