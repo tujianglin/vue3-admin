@@ -1,4 +1,5 @@
-export function wrapperEnv(env: Recordable): ViteEnv {
+/* 处理环境数据 */
+export function wrapperEnv(env: Record<string, any>): ViteEnv {
   const ret: any = {};
   Object.keys(env).map((i) => {
     let realName = env[i].replace(/\\n/g, '\n');
