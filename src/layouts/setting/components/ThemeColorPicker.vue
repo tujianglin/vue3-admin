@@ -1,6 +1,6 @@
 <script lang="tsx">
   import { defineComponent, ref } from 'vue';
-  import { APP_PRESET_COLOR_LIST } from '/@/settings/designSetting';
+  import { APP_PRESET_COLOR_LIST, primaryColor } from '/@/settings/designSetting';
   import { CheckOutlined } from '@ant-design/icons-vue';
   import { useDesign } from '/@/hooks/web/useDesign';
   import { useAppStore } from '/@/store/modules/app';
@@ -10,7 +10,7 @@
       const appStore = useAppStore();
       const { prefixCls } = useDesign('theme-color-picker');
 
-      const def = ref(appStore.themeConfig.primaryColor);
+      const def = ref(appStore.themeConfig.primaryColor || primaryColor);
 
       const handleClick = async (color) => {
         def.value = color;

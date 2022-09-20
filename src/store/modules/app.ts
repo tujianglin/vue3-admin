@@ -2,6 +2,7 @@ import { defineStore } from 'pinia';
 import { ConfigProvider } from 'ant-design-vue';
 import { Storage } from '/@/utils/storage';
 import { StorageEnum } from '/@/enums/storageEnum';
+import { primaryColor as defaultColor } from '/@/settings/designSetting';
 import { LocalTheme } from '/#/storage';
 
 interface AppState {
@@ -11,14 +12,13 @@ interface AppState {
 /* 缓存主题配置 */
 const localThemeConfig = Storage.getLocal<LocalTheme>(StorageEnum.THEME_KEY) || {};
 
-const { primaryColor } = localThemeConfig;
+const { primaryColor = defaultColor } = localThemeConfig;
 
-primaryColor &&
-  ConfigProvider.config({
-    theme: {
-      primaryColor,
-    },
-  });
+ConfigProvider.config({
+  theme: {
+    primaryColor,
+  },
+});
 
 export const useAppStore = defineStore('app', {
   state: (): AppState => ({

@@ -1,10 +1,12 @@
+/* class 前缀 */
 export const prefixCls = 't';
 
+/* 默认 主题颜色 */
 export const primaryColor = '#1890ff';
 
 /* app 主题颜色列表 */
 export const APP_PRESET_COLOR_LIST: string[] = [
-  '#1890ff',
+  primaryColor,
   '#0084f4',
   '#009688',
   '#536dfe',
