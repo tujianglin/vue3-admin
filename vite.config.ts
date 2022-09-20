@@ -58,5 +58,14 @@ export default defineConfig(({ command, mode }) => {
     },
     // 插件
     plugins: createVitePlugins(viteEnv, isBuild),
+    // 依赖优化选项
+    optimizeDeps: {
+      include: [
+        '@vue/runtime-core',
+        '@vue/shared',
+        'ant-design-vue/es/locale/zh_CN',
+        'ant-design-vue/es/locale/en_US',
+      ],
+    },
   };
 });

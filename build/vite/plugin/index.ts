@@ -6,6 +6,7 @@ import legacy from '@vitejs/plugin-legacy';
 import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 import { configStyleImportPlugin } from './styleImport';
 import { configVisualizerPlugin } from './visualizer';
+import { configThemePlugin } from './theme';
 
 export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   const {} = viteEnv;
@@ -17,6 +18,8 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   vitePlugins.push(configStyleImportPlugin());
 
   vitePlugins.push(configVisualizerPlugin());
+
+  vitePlugins.push(configThemePlugin());
 
   return vitePlugins;
 }

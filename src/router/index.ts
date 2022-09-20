@@ -2,12 +2,12 @@ import { App } from 'vue';
 import type { RouteRecordRaw } from 'vue-router';
 import { createRouter, createWebHistory } from 'vue-router';
 import { AppRouteRecordRaw } from '/#/router';
-// const Loyouts = () => import('/@/layouts/index.vue');
+const Loyouts = () => import('/@/layouts/index.vue');
 const routes: AppRouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/login',
-    // component: Loyouts,
+    component: Loyouts,
     children: [
       {
         path: '/login',

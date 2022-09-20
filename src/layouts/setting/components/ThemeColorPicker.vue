@@ -1,0 +1,66 @@
+<script lang="tsx">
+  import { defineComponent, ref } from 'vue';
+  import { APP_PRESET_COLOR_LIST } from '/@/settings/designSetting';
+  import { CheckOutlined } from '@ant-design/icons-vue';
+  import { changeTheme } from '/@/logics/theme';
+  export default defineComponent({
+    setup() {
+      const prefixCls = 't-theme-color-picker';
+
+      const def = ref('red');
+
+      const handleClick = async (color) => {
+        def.value = color;
+        changeTheme(color);
+      };
+
+      return () => (
+        <div class={prefixCls}>
+          {APP_PRESET_COLOR_LIST.map((color) => (
+            <span
+              onClick={() => handleClick(color)}
+              class={[
+                `${prefixCls}__item`,
+                {
+                  [`${prefixCls}__item--active`]: def.value === color,
+                },
+              ]}
+              style={{ background: color }}
+            >
+              <CheckOutlined></CheckOutlined>
+            </span>
+          ))}
+        </div>
+      );
+    },
+  });
+</script>
+<style lang="less">
+  @prefix-cls: ~'@{namespace}-theme-color-picker';
+
+  .@{prefix-cls} {
+    display: flex;
+    justify-content: space-around;
+
+    &__item {
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+
+      svg {
+        display: none;
+      }
+      &--active {
+        svg {
+          display: inline-block;
+          font-size: 12px;
+          margin-bottom: 3px;
+          fill: white;
+        }
+      }
+    }
+  }
+</style>
