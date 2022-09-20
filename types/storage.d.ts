@@ -1,5 +1,3 @@
-declare enum StorageEnum {
-  TOKEN_KEY = 'TOKEN_KEY',
+export interface LocalTheme {
+  primaryColor: string;
 }
-
-declare type BaseStorage = keyof typeof StorageEnum;
