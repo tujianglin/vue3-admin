@@ -2,18 +2,16 @@
   import { defineComponent, ref } from 'vue';
   import SettingDrawer from './SettingDrawer';
   import Icon from '/@/components/Icon';
-  import { useDesign } from '/@/hooks/web/useDesign';
   export default defineComponent({
     setup() {
-      const { prefixCls } = useDesign('setting');
       const visible = ref(false);
       const openDrawer = () => {
         visible.value = true;
       };
       return () => (
-        <div class={prefixCls}>
+        <div>
           <Icon
-            class={`${prefixCls}-icon`}
+            class="cursor-pointer"
             icon={'ant-design:setting-outlined'}
             onClick={() => openDrawer()}
           ></Icon>
@@ -23,11 +21,3 @@
     },
   });
 </script>
-<style lang="less">
-  @prefixCls: ~'@{namespace}-setting';
-  .@{prefixCls} {
-    &-icon {
-      cursor: pointer;
-    }
-  }
-</style>
