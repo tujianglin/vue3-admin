@@ -3,6 +3,7 @@
   import { Icon, disableCache } from '@iconify/vue';
   import { isString } from 'lodash-es';
   export default defineComponent({
+    name: 'Icon',
     props: {
       /* icon 名称 */
       icon: String,

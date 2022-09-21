@@ -2,12 +2,15 @@
   import { defineComponent } from 'vue';
   import { RouterView } from 'vue-router';
   import { ConfigProvider } from 'ant-design-vue';
+  import { useLocale } from '/@/locales/useLocale';
 
   export default defineComponent({
     setup() {
+      const { getAntdLocale } = useLocale();
+
       return () => (
         <div id="app">
-          <ConfigProvider>
+          <ConfigProvider locale={getAntdLocale.value}>
             <RouterView></RouterView>
           </ConfigProvider>
         </div>
