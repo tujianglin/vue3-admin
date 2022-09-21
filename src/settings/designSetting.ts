@@ -1,3 +1,5 @@
+import { LocalAppConfig } from '/#/storage';
+
 /* class 前缀 */
 export const prefixCls = 't';
 
@@ -16,3 +18,9 @@ export const APP_PRESET_COLOR_LIST: string[] = [
   '#9c27b0',
   '#ff9800',
 ];
+
+/* app 默认配置 */
+export const defAppConfig: LocalAppConfig = {
+  primaryColor: '#1890ff',
+  locale: 'zh_CN',
+};

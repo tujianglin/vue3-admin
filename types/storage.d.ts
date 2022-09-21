@@ -1,4 +1,4 @@
-export interface LocalTheme {
+export interface LocalAppConfig {
   /* 主题颜色 */
   primaryColor: string;
   /* 多语言 */

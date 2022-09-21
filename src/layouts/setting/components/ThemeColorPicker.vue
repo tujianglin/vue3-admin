@@ -10,7 +10,7 @@
       const appStore = useAppStore();
       const { prefixCls } = useDesign('theme-color-picker');
 
-      const def = ref(appStore.themeConfig.primaryColor || primaryColor);
+      const def = ref(appStore.appConfig.primaryColor || primaryColor);
 
       const handleClick = async (color) => {
         def.value = color;

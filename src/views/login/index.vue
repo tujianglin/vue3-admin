@@ -1,9 +1,16 @@
 <script lang="tsx">
   import { defineComponent } from 'vue';
   import { Button } from 'ant-design-vue';
+  import { useI18n } from '/@/hooks/web/useI18n';
   export default defineComponent({
     setup() {
-      return () => <Button type={'primary'}>aha</Button>;
+      const { t } = useI18n();
+      return () => (
+        <Button type={'primary'}>
+          {'哈哈'}
+          {t('layout.header.home')}
+        </Button>
+      );
     },
   });
 </script>

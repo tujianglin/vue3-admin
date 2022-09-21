@@ -1,7 +1,7 @@
 /* 多语言种类 */
 export const LOCALE = {
   ZH_CN: 'zh_CN',
-  EN_US: 'en',
+  EN_US: 'en_US',
 };
 
 /* 多语言下拉数据 */

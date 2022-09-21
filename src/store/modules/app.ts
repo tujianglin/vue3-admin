@@ -2,17 +2,18 @@ import { defineStore } from 'pinia';
 import { ConfigProvider } from 'ant-design-vue';
 import { Storage } from '/@/utils/storage';
 import { StorageEnum } from '/@/enums/storageEnum';
-import { primaryColor as defaultColor } from '/@/settings/designSetting';
-import { LocalTheme } from '/#/storage';
+import { defAppConfig } from '/@/settings/designSetting';
+import { LocalAppConfig } from '/#/storage';
+import { store } from '/@/store';
 
 interface AppState {
-  themeConfig: LocalTheme;
+  appConfig: LocalAppConfig;
 }
 
 /* 缓存主题配置 */
-const localThemeConfig = Storage.getLocal<LocalTheme>(StorageEnum.THEME_KEY) || {};
+const localAppConfig = Storage.getLocal<LocalAppConfig>(StorageEnum.APP_CONFIG) || {};
 
-const { primaryColor = defaultColor } = localThemeConfig;
+const { primaryColor = defAppConfig.primaryColor } = localAppConfig;
 
 ConfigProvider.config({
   theme: {
@@ -22,27 +23,37 @@ ConfigProvider.config({
 
 export const useAppStore = defineStore('app', {
   state: (): AppState => ({
-    themeConfig: {
-      ...localThemeConfig,
+    appConfig: {
+      ...defAppConfig,
+      ...localAppConfig,
     },
   }),
+  getters: {
+    getAppConfig(): LocalAppConfig {
+      return this.appConfig;
+    },
+  },
   actions: {
-    /* 主题配置 */
-    setTheme(theme: Partial<LocalTheme>) {
+    /* APP 配置 */
+    setTheme(theme: Partial<LocalAppConfig>) {
       Object.keys(theme).map((key) => {
-        this.themeConfig[key] = theme[key];
+        this.appConfig[key] = theme[key];
       });
-      Storage.setLocal(StorageEnum.THEME_KEY, this.themeConfig);
+      Storage.setLocal(StorageEnum.APP_CONFIG, this.appConfig);
     },
     /* 主题颜色配置 */
-    setThemeColor(color: LocalTheme['primaryColor']) {
-      this.themeConfig.primaryColor = color;
+    setThemeColor(color: LocalAppConfig['primaryColor']) {
+      this.appConfig.primaryColor = color;
       ConfigProvider.config({
         theme: {
           primaryColor: color,
         },
       });
-      Storage.setLocal(StorageEnum.THEME_KEY, this.themeConfig);
+      Storage.setLocal(StorageEnum.APP_CONFIG, this.appConfig);
     },
   },
 });
+
+export function useAppStoreWithOut() {
+  return useAppStore(store);
+}
