@@ -9,14 +9,14 @@
         visible.value = true;
       };
       return () => (
-        <div>
+        <>
           <Icon
             class="cursor-pointer"
             icon={'ant-design:setting-outlined'}
             onClick={() => openDrawer()}
           ></Icon>
           <SettingDrawer v-model:visible={visible.value}></SettingDrawer>
-        </div>
+        </>
       );
     },
   });

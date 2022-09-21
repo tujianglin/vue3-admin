@@ -1,6 +1,6 @@
 <script lang="tsx">
   import { computed, defineComponent, unref } from 'vue';
-  import { Icon } from '@iconify/vue';
+  import { Icon, disableCache } from '@iconify/vue';
   import { isString } from 'lodash-es';
   export default defineComponent({
     props: {
@@ -15,6 +15,8 @@
       },
     },
     setup(props) {
+      /* 禁用缓存 */
+      disableCache('all');
       const getSize = computed(() => {
         const { size } = props;
         let s = size;

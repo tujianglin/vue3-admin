@@ -14,7 +14,7 @@
 
       const handleClick = async (color) => {
         def.value = color;
-        appStore.setThemeColor({ primaryColor: color });
+        appStore.setThemeColor(color);
       };
 
       return () => (

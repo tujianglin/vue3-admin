@@ -63,6 +63,7 @@ export default defineConfig(({ command, mode }) => {
       include: [
         '@vue/runtime-core',
         '@vue/shared',
+        '@iconify/vue',
         'ant-design-vue/es/locale/zh_CN',
         'ant-design-vue/es/locale/en_US',
       ],

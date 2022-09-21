@@ -35,11 +35,11 @@ export const useAppStore = defineStore('app', {
       Storage.setLocal(StorageEnum.THEME_KEY, this.themeConfig);
     },
     /* 主题颜色配置 */
-    setThemeColor(theme: LocalTheme) {
-      this.themeConfig.primaryColor = theme.primaryColor;
+    setThemeColor(color: LocalTheme['primaryColor']) {
+      this.themeConfig.primaryColor = color;
       ConfigProvider.config({
         theme: {
-          primaryColor: theme.primaryColor,
+          primaryColor: color,
         },
       });
       Storage.setLocal(StorageEnum.THEME_KEY, this.themeConfig);
