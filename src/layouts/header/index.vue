@@ -1,15 +1,31 @@
 <script lang="tsx">
   import { defineComponent } from 'vue';
   import { Layout } from 'ant-design-vue';
+  import { useDesign } from '/@/hooks/web/useDesign';
+  import { AppLocalPicker } from '/@/components/Application';
   import Setting from '../setting/index.vue';
   export default defineComponent({
     setup() {
+      const { prefixCls } = useDesign('layout-header');
       return () => (
-        <Layout.Header>
+        <Layout.Header class={prefixCls}>
           <Setting></Setting>
+          {
+            <>
+              <AppLocalPicker></AppLocalPicker>
+            </>
+          }
         </Layout.Header>
       );
     },
   });
 </script>
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+  @prefixCls: ~'@{namespace}-layout-header';
+
+  .@{prefixCls} {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+  }
+</style>
