@@ -8,12 +8,12 @@
   export default defineComponent({
     name: 'AppLocalPicker',
     setup() {
-      const appStore = useAppStore();
+      const { getAppConfig, setTheme } = useAppStore();
       const { changeLocale } = useLocale();
-      const selected = ref([appStore.getAppConfig.locale]);
+      const selected = ref([getAppConfig.locale]);
       const toggleLocale = async (locale) => {
         selected.value = [locale];
-        appStore.setTheme({ locale });
+        setTheme({ locale });
         changeLocale(locale);
       };
       const overlayRender = () => {
@@ -27,6 +27,7 @@
       };
       return () => (
         <Dropdown
+          class="h-[100%] px-2"
           placement={'bottomRight'}
           trigger={'click'}
           v-slots={{

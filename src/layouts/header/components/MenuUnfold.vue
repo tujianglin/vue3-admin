@@ -10,11 +10,14 @@
         setTheme({ collapsed: !getAppConfig.collapsed });
       };
       return () => (
-        <span class="cursor-pointer" onClick={() => handleOutlined()}>
+        <span
+          class="cursor-pointer h-[100%] flex items-center px-2"
+          onClick={() => handleOutlined()}
+        >
           {getAppConfig.collapsed ? (
-            <Icon icon={'ant-design:menu-unfold-outlined'}></Icon>
+            <Icon icon={'ant-design:menu-unfold-outlined'} size="20"></Icon>
           ) : (
-            <Icon icon={'ant-design:menu-fold-outlined'}></Icon>
+            <Icon icon={'ant-design:menu-fold-outlined'} size="20"></Icon>
           )}
         </span>
       );

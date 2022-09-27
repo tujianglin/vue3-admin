@@ -11,7 +11,7 @@
       return () => (
         <>
           <Icon
-            class="cursor-pointer"
+            class="cursor-pointer h-[100%] px-2"
             icon={'ant-design:setting-outlined'}
             onClick={() => openDrawer()}
           ></Icon>

@@ -10,9 +10,16 @@
       const { prefixCls } = useDesign('layout-header');
       return () => (
         <Layout.Header class={prefixCls}>
-          <MenuUnfold></MenuUnfold>
-          <Setting></Setting>
-          <AppLocalPicker></AppLocalPicker>
+          <div>
+            {/* 侧边栏展开&关闭 */}
+            <MenuUnfold></MenuUnfold>
+          </div>
+          <div>
+            {/* 多语言 */}
+            <AppLocalPicker></AppLocalPicker>
+            {/* 设置 */}
+            <Setting></Setting>
+          </div>
         </Layout.Header>
       );
     },
@@ -25,6 +32,8 @@
     background-color: #fff;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0;
+    height: @header-height;
   }
 </style>

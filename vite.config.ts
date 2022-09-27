@@ -53,6 +53,9 @@ export default defineConfig(({ command, mode }) => {
         less: {
           modifyVars: generateModifyVars(),
           javascriptEnabled: true,
+          additionalData: `
+            @import '/@/design/config.less';
+          `,
         },
       },
     },

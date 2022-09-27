@@ -25,10 +25,10 @@
 
   .@{prefixCls} {
     .app-login {
-      height: 100px;
+      height: @header-height;
     }
     .scrollbar {
-      height: calc(100vh - 100px);
+      height: calc(100vh - @header-height);
     }
   }
 </style>
