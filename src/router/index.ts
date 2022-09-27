@@ -35,26 +35,492 @@ export const routes: AppRouteRecordRaw[] = [
         name: 'page1',
         component: () => import('/@/views/demo/page1.vue'),
       },
+      // {
+      //   path: '/page2',
+      //   name: 'page2',
+      //   component: () => import('/@/views/demo/page2.vue'),
+      // },
+      // {
+      //   path: '/demo1',
+      //   name: 'demo1',
+      //   children: [
+      //     {
+      //       path: '/page3',
+      //       name: 'page3',
+      //       component: () => import('/@/views/demo/page3.vue'),
+      //     },
+      //     {
+      //       path: '/page4',
+      //       name: 'page4',
+      //       component: () => import('/@/views/demo/page4.vue'),
+      //     },
+      //   ],
+      // },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
       {
-        path: '/page2',
-        name: 'page2',
-        component: () => import('/@/views/demo/page2.vue'),
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
       },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
       {
-        path: '/demo1',
-        name: 'demo1',
-        children: [
-          {
-            path: '/page3',
-            name: 'page3',
-            component: () => import('/@/views/demo/page3.vue'),
-          },
-          {
-            path: '/page4',
-            name: 'page4',
-            component: () => import('/@/views/demo/page4.vue'),
-          },
-        ],
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
+      },
+    ],
+  },
+  {
+    path: '/page',
+    redirect: '/page1',
+    name: 'demo',
+    component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
+    children: [
+      {
+        path: '/page1',
+        name: 'page1',
+        component: () => import('/@/views/demo/page1.vue'),
       },
     ],
   },

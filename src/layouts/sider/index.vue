@@ -1,21 +1,20 @@
 <script lang="tsx">
-  import { defineComponent, ref } from 'vue';
+  import { defineComponent } from 'vue';
   import { Layout } from 'ant-design-vue';
   import { useDesign } from '/@/hooks/web/useDesign';
-  import { Scrollbar } from '/@/components/Scrollbar';
+  import { ScrollContainer } from '/@/components/Container';
   import Menu from '../menu/index.vue';
   import { useAppStore } from '/@/store/modules/app';
   export default defineComponent({
     setup() {
       const { prefixCls } = useDesign('layout-sider');
-      const {} = useAppStore();
-      const collapsed = ref(false);
+      const { getAppConfig } = useAppStore();
       return () => (
-        <Layout.Sider class={prefixCls} v-model:collapsed={collapsed.value}>
+        <Layout.Sider class={prefixCls} v-model:collapsed={getAppConfig.collapsed}>
           <div class="app-login"></div>
-          <Scrollbar style={{ height: '300px' }}>
+          <ScrollContainer>
             <Menu></Menu>
-          </Scrollbar>
+          </ScrollContainer>
         </Layout.Sider>
       );
     },
@@ -25,5 +24,11 @@
   @prefixCls: ~'@{namespace}-layout-sider';
 
   .@{prefixCls} {
+    .app-login {
+      height: 100px;
+    }
+    .scrollbar {
+      height: calc(100vh - 100px);
+    }
   }
 </style>

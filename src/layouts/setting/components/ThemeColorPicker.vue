@@ -7,14 +7,14 @@
 
   export default defineComponent({
     setup() {
-      const appStore = useAppStore();
+      const { setThemeColor, getAppConfig } = useAppStore();
       const { prefixCls } = useDesign('theme-color-picker');
 
-      const def = ref(appStore.appConfig.primaryColor || primaryColor);
+      const def = ref(getAppConfig.primaryColor || primaryColor);
 
       const handleClick = async (color) => {
         def.value = color;
-        appStore.setThemeColor(color);
+        setThemeColor(color);
       };
 
       return () => (

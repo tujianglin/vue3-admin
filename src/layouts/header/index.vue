@@ -12,11 +12,7 @@
         <Layout.Header class={prefixCls}>
           <MenuUnfold></MenuUnfold>
           <Setting></Setting>
-          {
-            <>
-              <AppLocalPicker></AppLocalPicker>
-            </>
-          }
+          <AppLocalPicker></AppLocalPicker>
         </Layout.Header>
       );
     },

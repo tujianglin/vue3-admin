@@ -1,12 +1,10 @@
 <script lang="tsx">
   import { defineComponent, ref } from 'vue';
-  import { useDesign } from '/@/hooks/web/useDesign';
 
   export default defineComponent({
     name: 'ScrollBar',
     emits: ['scroll'],
-    setup(_, { slots, attrs, emit }) {
-      const { prefixCls } = useDesign('scrollbar');
+    setup(_, { slots, emit }) {
       const wrapRef = ref<HTMLDivElement | null>(null);
 
       const handleScroll = () => {
@@ -15,13 +13,8 @@
         });
       };
       return () => (
-        <div class={prefixCls}>
-          <div
-            ref={wrapRef}
-            class={[`${prefixCls}__wrap`]}
-            {...attrs}
-            onScroll={() => handleScroll()}
-          >
+        <div class="scrollbar">
+          <div ref={wrapRef} class="scrollbar__wrap" onScroll={() => handleScroll()}>
             {slots?.default?.()}
           </div>
         </div>
@@ -30,14 +23,13 @@
   });
 </script>
 <style lang="less">
-  @prefixCls: ~'@{namespace}-scrollbar';
-
-  .@{prefixCls} {
+  .scrollbar {
     overflow: hidden;
     position: relative;
     height: 100%;
 
     &__wrap {
+      height: 100%;
       overflow: auto;
     }
   }
