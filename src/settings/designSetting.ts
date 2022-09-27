@@ -23,4 +23,5 @@ export const APP_PRESET_COLOR_LIST: string[] = [
 export const defAppConfig: LocalAppConfig = {
   primaryColor: '#1890ff',
   locale: 'zh_CN',
+  collapsed: false,
 };

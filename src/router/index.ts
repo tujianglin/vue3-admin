@@ -11,6 +11,7 @@ export const routes: AppRouteRecordRaw[] = [
     component: Loyouts,
     meta: {
       hideChildrenInMenu: true,
+      icon: 'ep:avatar',
     },
     children: [
       {
@@ -25,6 +26,9 @@ export const routes: AppRouteRecordRaw[] = [
     redirect: '/page1',
     name: 'demo',
     component: Loyouts,
+    meta: {
+      icon: 'ep:briefcase',
+    },
     children: [
       {
         path: '/page1',

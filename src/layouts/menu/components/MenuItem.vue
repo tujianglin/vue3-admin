@@ -2,6 +2,7 @@
   import { defineComponent, PropType } from 'vue';
   import { Menu } from 'ant-design-vue';
   import { AppRouteRecordRaw } from '/#/router';
+  import Icon from '/@/components/Icon';
   const MenuItem = defineComponent({
     name: 'MenuItem',
     props: {
@@ -25,13 +26,25 @@
         return (
           <>
             {menuHasChildren() ? (
-              <Menu.SubMenu title={item.name}>
+              <Menu.SubMenu
+                title={item.name}
+                v-slots={{
+                  icon: () => <Icon icon={item.meta?.icon}></Icon>,
+                }}
+              >
                 {item.children?.map((i) => (
                   <MenuItem item={i}></MenuItem>
                 ))}
               </Menu.SubMenu>
             ) : (
-              <Menu.Item key={item.path}>{item.name}</Menu.Item>
+              <Menu.Item
+                key={item.path}
+                v-slots={{
+                  icon: () => <Icon icon={item.meta?.icon}></Icon>,
+                }}
+              >
+                {item.name}
+              </Menu.Item>
             )}
           </>
         );

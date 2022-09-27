@@ -5,11 +5,12 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import legacy from '@vitejs/plugin-legacy';
 import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 import windiCSS from 'vite-plugin-windicss';
+import { configMockPlugin } from './mock';
 
 import { configVisualizerPlugin } from './visualizer';
 
 export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
-  const {} = viteEnv;
+  const { VITE_MOCK } = viteEnv;
 
   const vitePlugins: (PluginOption | PluginOption[])[] = [
     vue(),
@@ -19,6 +20,8 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   ];
 
   isBuild && vitePlugins.push(legacy());
+
+  VITE_MOCK && vitePlugins.push(configMockPlugin(isBuild));
 
   vitePlugins.push(configVisualizerPlugin());
 
