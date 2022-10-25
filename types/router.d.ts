@@ -14,5 +14,7 @@ export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta'> {
     keepAlive?: boolean;
     /* 菜单 icon */
     icon?: string;
+    /* 标题 */
+    title?: string;
   };
 }

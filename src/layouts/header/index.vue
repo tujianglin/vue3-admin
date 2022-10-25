@@ -4,15 +4,20 @@
   import { useDesign } from '/@/hooks/web/useDesign';
   import { AppLocalPicker } from '/@/components/Application';
   import MenuUnfold from './components/MenuUnfold.vue';
+  // import Breadcrumb from './components/Breadcrumb.vue';
   import Setting from '../setting/index.vue';
   export default defineComponent({
     setup() {
       const { prefixCls } = useDesign('layout-header');
       return () => (
         <Layout.Header class={prefixCls}>
-          <div>
+          <div class="flex items-center">
             {/* 侧边栏展开&关闭 */}
             <MenuUnfold></MenuUnfold>
+            {/* 面包屑 */}
+            {
+              // <Breadcrumb></Breadcrumb>
+            }
           </div>
           <div>
             {/* 多语言 */}
@@ -29,11 +34,12 @@
   @prefixCls: ~'@{namespace}-layout-header';
 
   .@{prefixCls} {
+    height: @header-height;
     background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0;
-    height: @header-height;
+    min-width: 300px;
   }
 </style>
