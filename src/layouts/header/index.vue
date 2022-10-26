@@ -4,7 +4,6 @@
   import { useDesign } from '/@/hooks/web/useDesign';
   import { AppLocalPicker } from '/@/components/Application';
   import MenuUnfold from './components/MenuUnfold.vue';
-  // import Breadcrumb from './components/Breadcrumb.vue';
   import Setting from '../setting/index.vue';
   export default defineComponent({
     setup() {
@@ -14,12 +13,8 @@
           <div class="flex items-center">
             {/* 侧边栏展开&关闭 */}
             <MenuUnfold></MenuUnfold>
-            {/* 面包屑 */}
-            {
-              // <Breadcrumb></Breadcrumb>
-            }
           </div>
-          <div>
+          <div class="h-[100%] flex items-center">
             {/* 多语言 */}
             <AppLocalPicker></AppLocalPicker>
             {/* 设置 */}

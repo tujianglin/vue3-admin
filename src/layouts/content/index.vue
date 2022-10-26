@@ -2,10 +2,12 @@
   import { defineComponent, Transition, KeepAlive } from 'vue';
   import { Layout } from 'ant-design-vue';
   import { RouterView } from 'vue-router';
+  import { useDesign } from '/@/hooks/web/useDesign';
   export default defineComponent({
     setup() {
+      const { prefixCls } = useDesign('layout-content');
       return () => (
-        <Layout.Content>
+        <Layout.Content class={prefixCls}>
           <RouterView>
             {({ Component, route }) =>
               Component && (
@@ -26,4 +28,12 @@
     },
   });
 </script>
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+  @prefix-cls: ~'@{namespace}-layout-content';
+
+  .@{prefix-cls} {
+    margin: 8px;
+    padding: 8px;
+    background: #fff;
+  }
+</style>

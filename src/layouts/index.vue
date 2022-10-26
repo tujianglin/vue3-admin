@@ -6,6 +6,7 @@
   import LayoutContent from './content/index.vue';
   import LayoutSider from './sider/index.vue';
   import LayoutHeader from './header/index.vue';
+  import LayoutTabs from './tabs/index.vue';
   export default defineComponent({
     setup() {
       const { prefixCls } = useDesign('layout');
@@ -15,6 +16,7 @@
           <LayoutSider></LayoutSider>
           <Layout>
             <LayoutHeader></LayoutHeader>
+            <LayoutTabs></LayoutTabs>
             <LayoutContent></LayoutContent>
           </Layout>
         </Layout>

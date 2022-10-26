@@ -27,7 +27,7 @@
           <>
             {menuHasChildren() ? (
               <Menu.SubMenu
-                title={item.name}
+                title={item.meta?.title}
                 v-slots={{
                   icon: () => <Icon icon={item.meta?.icon}></Icon>,
                 }}
@@ -43,7 +43,7 @@
                   icon: () => <Icon icon={item.meta?.icon}></Icon>,
                 }}
               >
-                {item.name}
+                {item.meta?.title}
               </Menu.Item>
             )}
           </>

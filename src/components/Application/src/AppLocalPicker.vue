@@ -27,7 +27,7 @@
       };
       return () => (
         <Dropdown
-          class="h-[100%] px-2"
+          class="px-2"
           placement={'bottomRight'}
           trigger={'click'}
           v-slots={{

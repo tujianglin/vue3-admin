@@ -2,9 +2,10 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import 'ant-design-vue/dist/antd.variable.min.css';
 import 'virtual:windi.css';
-import { setupRouter } from './router';
-import { setupStore } from './store';
-import { setupI18n } from './locales';
+import { router, setupRouter } from '/@/router';
+import { setupStore } from '/@/store';
+import { setupI18n } from '/@/locales';
+import { setupRouterGuard } from '/@/router/guard';
 
 async function bootstrap() {
   const app = createApp(App);
@@ -15,6 +16,8 @@ async function bootstrap() {
   await setupI18n(app);
   // 配置 路由
   await setupRouter(app);
+
+  setupRouterGuard(router);
 
   app.mount('#app');
 }

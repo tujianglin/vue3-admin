@@ -20,7 +20,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
   ],
   rules: {
-    'no-console': 'warn',
     'vue/script-setup-uses-vars': 'error',
     '@typescript-eslint/ban-ts-ignore': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',

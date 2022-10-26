@@ -11,7 +11,9 @@
       const { getAppConfig } = useAppStore();
       return () => (
         <Layout.Sider class={prefixCls} v-model:collapsed={getAppConfig.collapsed}>
-          <div class="app-login"></div>
+          <div class="app-login">
+            <img />
+          </div>
           <ScrollContainer>
             <Menu></Menu>
           </ScrollContainer>
@@ -26,6 +28,13 @@
   .@{prefixCls} {
     .app-login {
       height: @header-height;
+      padding: 10px 20px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        background: skyblue;
+      }
     }
     .scrollbar {
       height: calc(100vh - @header-height);
